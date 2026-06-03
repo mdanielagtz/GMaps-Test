@@ -1,13 +1,17 @@
-require('dotenv').config();
-const express = require('express');
+// server.js
+const express = require("express");
+const dotenv = require("dotenv");
+const path = require("path");
+
+dotenv.config();
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// Servir archivos estáticos (HTML, CSS, JS)
-app.use(express.static('public'));
+// Servir archivos estáticos
+app.use(express.static(path.join(__dirname, "public")));
 
-// Endpoint para entregar la API key
-app.get('/api-key', (req, res) => {
+// Endpoint para enviar la API key al frontend
+app.get("/api/key", (req, res) => {
   res.json({ key: process.env.API_KEY });
 });
 
