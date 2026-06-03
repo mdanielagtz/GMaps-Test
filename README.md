@@ -12,6 +12,7 @@ El objetivo es mostrar un mapa interactivo con marcadores utilizando coordenadas
    npm install
 
 3. Crear archivo .env en la raiz con tu API_KEY
+    ```bash
 API_KEY=tu_api_key_aqui
 
 4. Ejecutar el servidor
